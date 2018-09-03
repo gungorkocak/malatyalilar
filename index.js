@@ -31,10 +31,24 @@ const characters = function (chars) {
   }).join("\n");
 }
 
-const chars = [
+let chars = [
   { id: 'ch1', src: './characters/ch1.png', position: { x: 100, y: 100 } },
   { id: 'ch2', src: './characters/ch2.png', position: { x: 250, y: 100 } },
   { id: 'ch3', src: './characters/ch3.png', position: { x: 400, y: 100 } },
 ]
 
-canvas.innerHTML = characters(chars);
+const updatePosition = function ({ id, src, position }) {
+  return {
+    id, src,
+    position: { x: position.x + 10, y: position.y }
+  }
+}
+
+const render = function () {
+  chars = map(chars, updatePosition);
+
+  canvas.innerHTML = characters(chars);
+  window.requestAnimationFrame(render);
+}
+
+window.requestAnimationFrame(render);
