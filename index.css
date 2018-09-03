@@ -1,3 +1,7 @@
+body {
+  background-image: url('./bg.png');
+  background-size: cover;
+}
 .character {
   position: absolute;
   bottom: 40px;
