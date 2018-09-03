@@ -1,7 +1,10 @@
-.character img {
+.character {
   position: absolute;
   bottom: 40px;
   left: 40px;
   width: 300px;
+}
+.character img {
+  width: 100%;
   height: auto;
 }
